@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACE IMAT | Elite IMAT Preparation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-font-smoothing:antialiased;
+}
+
+body{
+background:#fffdf5;
+overflow-x:hidden;
+color:#222;
+}
+
+.section-title{
+text-align:center;
+font-size:2.8rem;
+font-weight:900;
+margin:120px 0 60px;
+}
+
+/* ================= NAV ================= */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.brand-text{
+font-size:28px;
+font-weight:900;
+color:#f4b400;
+}
+
+.login-btn{
+padding:12px 28px;
+border-radius:40px;
+font-weight:600;
+background:#f4b400;
+color:white;
+text-decoration:none;
+}
+
+/* ================= HERO ================= */
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.hero video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:3.5rem;
+font-weight:900;
+}
+
+/* ================= BUTTON ================= */
+.gold-btn,.glow-btn{
+padding:16px 45px;
+margin-top:25px;
+border:none;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+background:linear-gradient(90deg,#ffd700,#ffea94,#ffd700);
+}
+
+/* ================= DRAGGABLE WRAPPER ================= */
+.drag-container{
+overflow-x:auto;
+scroll-behavior:smooth;
+display:flex;
+gap:40px;
+padding:0 8%;
+scroll-snap-type:x mandatory;
+}
+
+.drag-container::-webkit-scrollbar{
+display:none;
+}
+
+/* ================= CARD ================= */
+.segment{
+min-width:320px;
+scroll-snap-align:center;
+background:white;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
+padding:25px;
+text-align:center;
+transition:0.4s ease;
+}
+
+.segment img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.segment:hover{
+transform:translateY(-10px);
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial{
+min-width:300px;
+scroll-snap-align:center;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+.testimonial img{
+width:80px;
+height:80px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+/* ================= OFFER 3D CAROUSEL ================= */
+.carousel{
+position:relative;
+height:420px;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1500px;
+overflow:hidden;
+}
+
+.carousel-track{
+position:relative;
+width:100%;
+height:100%;
+}
+
+.carousel .segment{
+position:absolute;
+top:50%;
+left:50%;
+transform-style:preserve-3d;
+transition:1s cubic-bezier(.4,0,.2,1);
+opacity:0;
+}
+
+.carousel .segment.active{
+transform:translate(-50%,-50%) rotateY(0deg) scale(1);
+opacity:1;
+z-index:3;
+}
+
+.carousel .segment.left{
+transform:translate(-150%,-50%) rotateY(60deg) scale(0.8);
+opacity:0.6;
+z-index:2;
+}
+
+.carousel .segment.right{
+transform:translate(50%,-50%) rotateY(-60deg) scale(0.8);
+opacity:0.6;
+z-index:2;
+}
+
+/* ================= STABLE ================= */
+.stable-section{
+padding:120px 8%;
+text-align:center;
+}
+
+.stable-section img{
+width:300px;
+margin:20px;
+border-radius:20px;
+}
+
+/* ================= LOYALTY ================= */
+.loyalty{
+background:#fff7d9;
+padding:120px 8%;
+text-align:center;
+}
+
+.loyalty img{
+width:300px;
+margin-top:40px;
+border-radius:20px;
+}
+
+/* ================= LECTURER ================= */
+.lecturer{
+padding:120px 8%;
+text-align:center;
+}
+
+.lecturer img{
+width:300px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+/* ================= SOCIAL ================= */
+.social{
+padding:80px;
+text-align:center;
+}
+
+.social img{
+width:40px;
+margin:20px;
+}
+
+@media(max-width:768px){
+.section-title{font-size:2rem;}
+.segment{min-width:260px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="brand-text">ACE IMAT</div>
+<a href="#" class="login-btn">Login</a>
+</nav>
+
+<section class="hero">
+<video autoplay muted loop playsinline>
+<source src="assets/videos/hero-ace-imat.mp4" type="video/mp4">
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>Premium IMAT Preparation</h1>
+<button class="gold-btn">Let's Ace</button>
+</div>
+</section>
+
+<!-- WHY CHOOSE -->
+<h2 class="section-title">Why to Choose ACE IMAT?</h2>
+<div class="drag-container" id="whyScroll">
+<div class="segment"><img src="assets/images/why-choose/imat-custom-lectures.jpg"><p>IMAT customized Lectures</p><p>Detailed Diagrammatic explanation</p></div>
+<div class="segment"><img src="assets/images/why-choose/free-demo.jpg"><p>Free Demo access to All</p><p>To get a glimpse of our quality</p></div>
+<div class="segment"><img src="assets/images/why-choose/unit-wise-mcqs.jpg"><p>Unit wise MCQs</p><p>After every unit completion</p></div>
+<div class="segment"><img src="assets/images/why-choose/mentorship-webinar.jpg"><p>Mentorship Webinar sessions</p><p>Monthly twice for aspiring minds</p></div>
+<div class="segment"><img src="assets/images/why-choose/dashboard-analytics.jpg"><p>Track your progress</p><p>In dashboard</p></div>
+<div class="segment"><img src="assets/images/why-choose/imat-europe-students.jpg"><p>Designed by IMAT cleared students</p><p>Studying medicine in Europe</p></div>
+</div>
+
+<!-- APP SECTION -->
+<div class="stable-section">
+<h2 class="section-title">ACE IMAT Available on Android & iOS</h2>
+<img src="assets/images/apps/android-app.jpg">
+<img src="assets/images/apps/ios-app.jpg"><br>
+<button class="glow-btn">Download Android App</button>
+<button class="glow-btn">Download iOS App</button>
+</div>
+
+<!-- OFFER SECTION (MOVED HERE) -->
+<h2 class="section-title">When you choose us, we offer you</h2>
+<div class="carousel">
+<div class="carousel-track" id="offerCarousel">
+<div class="segment"><img src="assets/images/offers/daily-mock-test.jpg"><p>One Free Mock Test Everyday</p></div>
+<div class="segment"><img src="assets/images/offers/top3-refund.jpg"><p>Top 3 students get 100% course refund</p></div>
+<div class="segment"><img src="assets/images/offers/question-bank-10000.jpg"><p>10,000+ MCQs Question bank</p><p>@ just € 10</p></div>
+</div>
+</div>
+
+<!-- LOYALTY -->
+<div class="loyalty">
+<h2 class="section-title">Student Loyalty Program</h2>
+<p>Earn 25% loyalty bonus per student referral purchase</p>
+<h3>Bring 4 students — your course becomes FREE!!!</h3>
+<button class="glow-btn">Join Student Loyalty Program</button>
+<img src="assets/images/loyalty/student-loyalty-program.jpg">
+</div>
+
+<!-- LECTURER -->
+<div class="lecturer">
+<h2 class="section-title">Know About the Lecturer – Nandhish</h2>
+<img src="assets/images/lecturer/nandhish-profile.jpg">
+<p>IMAT Rank 8 | Studying Medicine in Europe | Mentored 100+ Students</p>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="drag-container">
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-1.jpg"><p>"ACE IMAT transformed my preparation."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-2.jpg"><p>"Best mentorship and analytics."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-3.jpg"><p>"Highly recommended for IMAT."</p></div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social">
+<a href="#"><img src="assets/images/social/youtube-icon.png"></a>
+<a href="#"><img src="assets/images/social/instagram-icon.png"></a>
+<a href="#"><img src="assets/images/social/telegram-icon.png"></a>
+<a href="#"><img src="assets/images/social/whatsapp-icon.png"></a>
+</div>
+
+<script>
+
+/* ===== 3D CAROUSEL LOGIC ===== */
+
+const slides = document.querySelectorAll('#offerCarousel .segment');
+let index = 0;
+
+function updateCarousel(){
+slides.forEach((slide,i)=>{
+slide.classList.remove('active','left','right');
+});
+
+slides[index].classList.add('active');
+slides[(index - 1 + slides.length) % slides.length].classList.add('left');
+slides[(index + 1) % slides.length].classList.add('right');
+}
+
+function nextSlide(){
+index = (index + 1) % slides.length;
+updateCarousel();
+}
+
+updateCarousel();
+setInterval(nextSlide,4000);
+
+</script>
+
+</body>
+</html>
