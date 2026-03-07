@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACE IMAT | Elite IMAT Preparation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* BOTTOM SOCIAL BAR */
+.bottom-social{
+position:fixed;
+bottom:20px;
+right:20px;   
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:999;
+}
+
+.social-icon{
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background:#ffffff;
+color:#222;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+transition:0.3s ease;
+}
+
+.social-icon svg{
+width:24px;
+height:24px;
+display:block;
+}
+
+.social-icon:hover{
+background:#f4b400;
+color:#ffffff;
+transform:scale(1.15);
+}
+/* ================= GLOBAL ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-font-smoothing:antialiased;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fffdf5;
+overflow-x:hidden;
+color:#222;
+}
+
+.section-title{
+text-align:center;
+font-size:2.8rem;
+font-weight:900;
+margin:70px 0 30px;
+
+/* animation */
+opacity:0;
+transform:translateY(60px);
+transition:all 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+.section-title.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= NAV ================= */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.brand-text{
+font-size:28px;
+font-weight:900;
+color:#f4b400;
+}
+
+.login-btn{
+padding:8px 20px;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+background:linear-gradient(90deg,#ffd700,#ffea94,#ffd700);
+color:#222;
+text-decoration:none;
+box-shadow:0 0 10px rgba(255,215,0,0.6);
+}
+/* NAV RIGHT CONTAINER */
+.nav-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+
+
+/* ================= HERO ================= */
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+margin-top:90px; /* pushes below fixed navbar */
+}
+
+.hero-video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(0.45);
+}
+
+/* Hide mobile video on desktop */
+.mobile-video{
+display:none;
+}
+
+/* Show vertical video on phones */
+@media(max-width:768px){
+.why-imat-container{
+grid-template-columns:1fr;
+}
+
+.why-imat-card{
+padding:25px;
+}
+
+.desktop-video{
+display:none;
+}
+
+.mobile-video{
+display:block;
+}
+
+}
+
+.hero-overlay{
+display:none;
+}
+
+.hero-content{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:3.5rem;
+font-weight:900;
+}
+
+/* ================= PREMIUM SLOW GOLD GLOW ================= */
+
+.gold-btn,
+.glow-btn,
+.login-btn{
+position:relative;
+padding:16px 45px;
+margin-top:25px;
+border:none;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+text-decoration:none;
+color:#222;
+background:linear-gradient(90deg,#ffd700,#ffea94,#ffd700); /* rich golden yellow */
+overflow:hidden;
+box-shadow:0 0 12px rgba(255,215,0,0.6);
+animation:goldPulse 4s ease-in-out infinite;
+}
+/* WHY IMAT */
+/* ECG LINE */
+
+.why-imat-section{
+position:relative;
+overflow:hidden;
+}
+
+.ecg-line{
+position:absolute;
+top:50%;
+left:0;
+width:200%;
+height:120px;
+stroke:#FFD700;
+stroke-width:4;
+fill:none;
+filter:drop-shadow(0 0 8px gold);
+animation:ecgMove 12s linear infinite;
+pointer-events:none;
+}
+
+@keyframes ecgMove{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+.why-imat-section{
+padding:80px 8%;
+text-align:center;
+}
+
+.why-imat-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.why-imat-card{
+
+display:flex;
+align-items:center;
+gap:18px;
+
+background:linear-gradient(
+145deg,
+rgba(255,255,255,0.85),
+rgba(255,255,255,0.55)
+);
+
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.6);
+border-radius:20px;
+
+padding:28px;
+
+opacity:0;
+transform:translateY(80px) scale(0.96);
+
+transition:
+opacity 1s cubic-bezier(.22,1,.36,1),
+transform 1s cubic-bezier(.22,1,.36,1),
+box-shadow .4s ease;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+.why-imat-img{
+width:70px;
+height:70px;
+object-fit:contain;
+flex-shrink:0;
+}
+
+.why-imat-card p{
+font-size:17px;
+font-weight:500;
+letter-spacing:0.2px;
+line-height:1.6;
+}
+
+.why-imat-card.active{
+opacity:1;
+transform:translateY(0) scale(1);
+
+border-color:#FFD700;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.35),
+0 0 22px rgba(255,215,0,0.35);
+}
+.why-imat-card:hover{
+transform:translateY(-6px) scale(1.02);
+
+box-shadow:
+0 18px 50px rgba(0,0,0,0.4),
+0 0 25px rgba(255,215,0,0.35);
+}
+.why-imat-card:hover .why-imat-img{
+filter:contrast(1.4) brightness(1.15) saturate(1.3);
+}
+
+.why-imat-card:hover .why-imat-icon{
+transform:scale(1.1);
+box-shadow:
+0 10px 25px rgba(0,0,0,0.25),
+0 0 16px rgba(255,215,0,0.45);
+}
+/* smooth left → right shine */
+.gold-btn::before,
+.glow-btn::before,
+.login-btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-150%;
+width:150%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent 0%,
+rgba(255,255,255,0.75) 50%,
+transparent 100%
+);
+animation:shineMove 6s linear infinite; /* slower */
+}
+
+/* slow shine movement */
+@keyframes shineMove{
+0%{ left:-150%; }
+100%{ left:150%; }
+}
+
+/* soft breathing glow */
+@keyframes goldPulse{
+0%{ box-shadow:0 0 12px rgba(255,215,0,0.6); }
+50%{ box-shadow:0 0 30px rgba(255,215,0,1); }
+100%{ box-shadow:0 0 12px rgba(255,215,0,0.6); }
+}
+/* ================= DRAG CONTAINER ================= */
+.drag-container{
+overflow-x:auto;
+scroll-behavior:smooth;
+display:flex;
+gap:40px;
+padding:0 8%;
+scroll-snap-type:x mandatory;
+}
+
+.drag-container::-webkit-scrollbar{
+display:none;
+}
+
+/* ================= CARD ================= */
+.segment{
+min-width:320px;
+scroll-snap-align:center;
+background:white;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
+padding:25px;
+text-align:center;
+transition:0.4s ease;
+}
+
+.segment img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.segment:hover{
+transform:translateY(-10px);
+}
+
+/* ================= WHY TRACK ================= */
+.why-track{
+display:flex;
+gap:40px;
+width:max-content;
+}
+
+/* ================= APP ================= */
+.stable-section{
+padding:40px 8%;
+text-align:center;
+}
+
+.stable-section img{
+width:300px;
+margin:20px;
+border-radius:20px;
+}
+
+.stable-section .section-title{
+margin:30px 0 10px;
+}
+
+}
+/* ================= STORE BUTTONS ================= */
+
+.store-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.store-btn img{
+height:60px;
+transition:0.3s ease;
+filter:drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.store-btn img:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* ================= OFFER 3D ================= */
+.carousel{
+position:relative;
+height:420px;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1500px;
+overflow:hidden;
+}
+
+.carousel-track{
+position:relative;
+width:100%;
+height:100%;
+}
+
+.carousel .segment{
+position:absolute;
+top:50%;
+left:50%;
+transform-style:preserve-3d;
+transition:1s cubic-bezier(.4,0,.2,1);
+opacity:0;
+}
+
+.carousel .segment.active{
+transform:translate(-50%,-50%) rotateY(0deg) scale(1);
+opacity:1;
+z-index:3;
+}
+
+.carousel .segment.left{
+transform:translate(-150%,-50%) rotateY(60deg) scale(0.8);
+opacity:0.6;
+z-index:2;
+}
+
+.carousel .segment.right{
+transform:translate(50%,-50%) rotateY(-60deg) scale(0.8);
+opacity:0.6;
+z-index:2;
+}
+
+/* ================= LOYALTY ================= */
+.loyalty{
+background:#fff7d9;
+padding:70px 8%;
+text-align:center;
+}
+
+.loyalty-content{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+margin-top:30px;
+}
+
+.loyalty-content img{
+width:420px;
+max-width:100%;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.loyalty-text{
+width:420px;
+text-align:left;
+font-size:18px;
+}
+
+.loyalty-btn{
+display:block;
+margin:40px auto 0 auto;
+}
+
+.loyalty img{
+width:100%;
+max-width:420px;
+margin-top:40px;
+border-radius:20px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+object-fit:cover;
+}
+
+/* ================= LECTURER ================= */
+.lecturer{
+padding:70px 8%;
+text-align:center;
+}
+
+.lecturer img{
+width:300px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial-wrapper{
+overflow:hidden;
+}
+
+.testimonial-track{
+display:flex;
+gap:40px;
+width:max-content;
+}
+
+.testimonial{
+min-width:300px;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+.testimonial img{
+width:80px;
+height:80px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+/* ================= SOCIAL ================= */
+.social{
+padding:50px;
+text-align:center;
+}
+
+.social img{
+width:40px;
+margin:20px;
+}
+
+@media(max-width:768px){
+
+.section-title{font-size:2rem;}
+.segment{min-width:260px;}
+
+.loyalty-content{
+flex-direction:column;
+text-align:center;
+}
+
+.loyalty-text{
+text-align:center;
+}
+
+}
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo{
+height:45px;
+width:auto;
+}
+.app-store-section{
+display:flex;
+justify-content:center;
+gap:120px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.store-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.store-box img{
+width:300px;
+margin-bottom:15px;
+border-radius:20px;
+}
+.why-imat-icon{
+width:74px;
+height:74px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#ffffff;
+border-radius:50%;
+border:1px solid rgba(255,255,255,0.7);
+
+box-shadow:
+0 8px 22px rgba(0,0,0,0.18),
+0 0 10px rgba(255,215,0,0.35);
+
+flex-shrink:0;
+}
+
+.why-imat-img{
+width:46px;
+height:46px;
+object-fit:contain;
+filter:contrast(1.25) brightness(1.1) saturate(1.15);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="brand">
+  <img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772602527/Logo_uvow6n.png" class="logo">
+  <span class="brand-text">ACE IMAT</span>
+</div>
+
+
+    <!-- STORE BUTTONS -->
+   
+
+    <a href="#" class="login-btn">Login</a>
+
+
+</nav>
+
+<section class="hero">
+
+<!-- Desktop Video -->
+<video class="hero-video desktop-video" autoplay muted loop playsinline>
+<source src="https://res.cloudinary.com/dl37ybhj9/video/upload/v1772732263/lv_0_20260305213502_ao4eue.mp4" type="video/mp4">
+</video>
+
+<!-- Mobile Video -->
+<video class="hero-video mobile-video" autoplay muted loop playsinline>
+<source src="https://res.cloudinary.com/dl37ybhj9/video/upload/v1772603096/Hero_p8smfc.mp4" type="video/mp4">
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<h1></h1>
+<button class="gold-btn">Let's Ace</button>
+</div>
+
+</section>
+
+<!-- WHY IMAT SECTION -->
+
+<section class="why-imat-section">
+
+<h2 class="section-title">Why IMAT?</h2>
+
+<div class="why-imat-container">
+
+<svg class="ecg-line" viewBox="0 0 2000 200" preserveAspectRatio="none">
+<path d="M0 100 
+L120 100 
+L160 40 
+L200 160 
+L240 100 
+L360 100 
+L400 40 
+L440 160 
+L480 100
+L600 100
+L640 40
+L680 160
+L720 100
+L840 100
+L880 40
+L920 160
+L960 100
+L1080 100
+L1120 40
+L1160 160
+L1200 100
+L1320 100
+L1360 40
+L1400 160
+L1440 100
+L1560 100
+L1600 40
+L1640 160
+L1680 100
+L1800 100
+L1840 40
+L1880 160
+L1920 100
+L2000 100"/>
+</svg>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772866594/Gemini_Generated_Image_9gu9cs9gu9cs9gu9_habudc.png" class="why-imat-img">
+</div>
+<div>
+<p>Top Ranked Medical Universities in the world.</p>
+</div>
+
+</div>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772863785/Gemini_Generated_Image_bv7usrbv7usrbv7u_yn0lpu.png" class="why-imat-img">
+</div>
+<p>Up to 100% Scholarship Opportunities for eligible students.</p>
+</div>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772863785/Gemini_Generated_Image_j03wpuj03wpuj03w_mgobao.png" class="why-imat-img">
+</div>
+<p>Transparent Merit-Based Admission through the IMAT exam.</p>
+</div>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772863785/Gemini_Generated_Image_dewwd7dewwd7deww_g3bifg.png" class="why-imat-img">
+</div>
+<p>Long-Term Career Flexibility with global opportunities </p>
+</div>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772863785/Gemini_Generated_Image_eq4yomeq4yomeq4y_wdfgyr.png" class="why-imat-img">
+</div>
+<p>Strong Research Environment with advanced European research facilities.</p>
+</div>
+
+<div class="why-imat-card">
+<div class="why-imat-icon">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772863785/Gemini_Generated_Image_wtb9swtb9swtb9sw_hz2cln.png" class="why-imat-img">
+</div>
+<p>High quality work life balance.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE -->
+<h2 class="section-title">Why to Choose ACE IMAT?</h2>
+<div class="drag-container" id="whyScroll">
+<div class="why-track">
+
+<!-- ORIGINAL 6 -->
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624154/Lectures_ulcwua.jpg"><p>IMAT customized Lectures</p><p>Detailed Diagrammatic explanation</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624153/Free_Demo_f5gni5.jpg"><p>Free Demo access to All</p><p>To get a glimpse of our quality</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624152/Chapter_wise_MCQ_wqvk3e.jpg"><p>Unit wise MCQs</p><p>After every unit completion</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624157/Webminar_sessions_jvowwe.jpg"><p>Mentorship Webinar sessions</p><p>Monthly twice for aspiring minds</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772745436/2026-03-06_00_29_21.668_0530_n4flxl.jpg"><p>Track your progress</p><p>In dashboard</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624951/aluminii_divt29.jpg"><p>Designed by IMAT cleared students</p><p>Studying medicine in Europe</p></div>
+
+<!-- DUPLICATE -->
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624154/Lectures_ulcwua.jpg"><p>IMAT customized Lectures</p><p>Detailed Diagrammatic explanation</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624153/Free_Demo_f5gni5.jpg"><p>Free Demo access to All</p><p>To get a glimpse of our quality</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624152/Chapter_wise_MCQ_wqvk3e.jpg"><p>Unit wise MCQs</p><p>After every unit completion</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624157/Webminar_sessions_jvowwe.jpg"><p>Mentorship Webinar sessions</p><p>Monthly twice for aspiring minds</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772745436/2026-03-06_00_29_21.668_0530_n4flxl.jpg"><p>Track your progress</p><p>In dashboard</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624951/aluminii_divt29.jpg"><p>Designed by IMAT cleared students</p><p>Studying medicine in Europe</p></div>
+
+</div>
+</div>
+
+<!-- APP -->
+<div class="stable-section">
+
+<h2 class="section-title">ACE IMAT Available on Android & iOS</h2>
+
+<div class="app-store-section">
+<div class="store-box">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772733946/Gemini_Generated_Image_xyhrboxyhrboxyhr_pqtnjk.png">
+<button class="glow-btn">Download <br> Android App</button>
+</div>
+
+<div class="store-box">
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772733957/Gemini_Generated_Image_mc1byzmc1byzmc1b_ptya4a.png">
+<button class="glow-btn">Download <br> iOS App</button>
+</div>
+
+</div>
+
+<!-- OFFER -->
+<h2 class="section-title">When you choose us, we offer you</h2>
+<div class="carousel">
+<div class="carousel-track" id="offerCarousel">
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772602528/Mock_Test_ewtmb8.jpg"><p>One Free Mock Test Everyday</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772624921/top_3_vun5sm.jpg"><p>Top 3 students get <br>100% course refund</p></div>
+<div class="segment"><img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772745559/1000029822_llqbz5.jpg"><p>10,000+ MCQs Question bank</p><p>@ just € 10</p></div>
+</div>
+</div>
+
+<div class="loyalty">
+
+<h2 class="section-title">Student Loyalty Program</h2>
+
+<div class="loyalty-content">
+
+<img src="https://res.cloudinary.com/dl37ybhj9/image/upload/v1772734619/2026-03-05_23_43_28.210_0530_zenuo5.jpg">
+
+<div class="loyalty-text">
+<p>Earn 25% loyalty bonus <br> per student referral purchase</p>
+<br>
+<h3>Bring 4 students — <br> your course becomes FREE!!!</h3>
+</div>
+
+</div>
+
+<button class="glow-btn loyalty-btn">Join Student Loyalty Program</button>
+
+</div>
+
+<!-- LECTURER -->
+<div class="lecturer">
+<h2 class="section-title">Know About the Lecturer – Nandhish</h2>
+<img src="assets/images/lecturer/nandhish-profile.jpg">
+<p>IMAT Rank 8 | Studying Medicine in Europe | Mentored 100+ Students</p>
+</div>
+
+<!-- TESTIMONIALS -->
+<h2 class="section-title">Testimonials</h2>
+<div class="drag-container testimonial-wrapper">
+<div class="testimonial-track">
+
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-1.jpg"><p>"ACE IMAT transformed my preparation."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-2.jpg"><p>"Best mentorship and analytics."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-3.jpg"><p>"Highly recommended for IMAT."</p></div>
+
+<!-- DUPLICATE -->
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-1.jpg"><p>"ACE IMAT transformed my preparation."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-2.jpg"><p>"Best mentorship and analytics."</p></div>
+<div class="testimonial"><img src="assets/images/testimonials/student-feedback-3.jpg"><p>"Highly recommended for IMAT."</p></div>
+
+</div>
+</div>
+
+<!-- SOCIAL -->
+
+
+<script>
+
+/* WHY AUTO LOOP */
+const whyTrack = document.querySelector(".why-track");
+let whyPos = 0;
+let whySpeed = 0.5;
+
+function animateWhy(){
+whyPos -= whySpeed;
+if(Math.abs(whyPos) >= whyTrack.scrollWidth / 2){
+whyPos = 0;
+}
+whyTrack.style.transform = `translateX(${whyPos}px)`;
+requestAnimationFrame(animateWhy);
+}
+animateWhy();
+
+document.getElementById("whyScroll").addEventListener("mouseenter",()=> whySpeed=0);
+document.getElementById("whyScroll").addEventListener("mouseleave",()=> whySpeed=0.5);
+
+/* TESTIMONIAL AUTO LOOP */
+const testiTrack = document.querySelector(".testimonial-track");
+let testiPos = 0;
+let testiSpeed = 0.4;
+
+function animateTesti(){
+testiPos -= testiSpeed;
+if(Math.abs(testiPos) >= testiTrack.scrollWidth / 2){
+testiPos = 0;
+}
+testiTrack.style.transform = `translateX(${testiPos}px)`;
+requestAnimationFrame(animateTesti);
+}
+animateTesti();
+
+document.querySelector(".testimonial-wrapper").addEventListener("mouseenter",()=> testiSpeed=0);
+document.querySelector(".testimonial-wrapper").addEventListener("mouseleave",()=> testiSpeed=0.4);
+
+/* OFFER CAROUSEL */
+const slides = document.querySelectorAll('#offerCarousel .segment');
+let index = 0;
+
+function updateCarousel(){
+slides.forEach(slide=>{
+slide.classList.remove('active','left','right');
+});
+slides[index].classList.add('active');
+slides[(index-1+slides.length)%slides.length].classList.add('left');
+slides[(index+1)%slides.length].classList.add('right');
+}
+
+function nextSlide(){
+index=(index+1)%slides.length;
+updateCarousel();
+}
+
+updateCarousel();
+setInterval(nextSlide,4000);
+/* HEADING SCROLL ANIMATION */
+
+const headings = document.querySelectorAll(".section-title");
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{
+threshold:0.25
+});
+
+headings.forEach(heading=>{
+observer.observe(heading);
+});
+
+</script>
+<!-- SOCIAL MEDIA BOTTOM BAR -->
+<div class="bottom-social">
+
+    <!-- YOUTUBE -->
+    <a href="https://www.youtube.com/@AceIMAT" target="_blank" class="social-icon" aria-label="YouTube">
+        <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2A31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.8 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+    </a>
+
+    <!-- TELEGRAM -->
+    <a href="https://t.me/ACE_IMAT" target="_blank" class="social-icon" aria-label="Telegram">
+        <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M9.9 16.2l-.4 4.3c.6 0 .9-.3 1.3-.7l3.1-3 6.4 4.7c1.2.7 2 .3 2.3-1.1l4.2-19.6c.4-1.8-.6-2.5-1.8-2l-24 9.2c-1.6.6-1.6 1.5-.3 1.9l6.1 1.9L20.5 4c.7-.4 1.3-.2.8.3"/>
+        </svg>
+    </a>
+
+  
+   <!-- INSTAGRAM -->
+<a href="https://www.instagram.com/ace.imat/" target="_blank" class="social-icon" aria-label="Instagram">
+<svg viewBox="0 0 24 24">
+<path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm4.25 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.2A2.7 2.7 0 1 1 14.7 12 2.7 2.7 0 0 1 12 14.7zm4.8-7.9a1.05 1.05 0 1 1 1.05-1.05 1.05 1.05 0 0 1-1.05 1.05z"/>
+</svg>
+</a>
+
+    <!-- WHATSAPP -->
+<a href="#" class="social-icon" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24">
+<path fill="currentColor" d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.4.1-.5.7-.6.8-.2.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.8c-.1-.2 0-.3.1-.4s.2-.3.3-.4.1-.2.2-.3 0-.2 0-.3-.4-1.1-.6-1.5-.4-.3-.5-.3h-.4a.8.8 0 0 0-.6.3 2.4 2.4 0 0 0-.8 1.8 4.2 4.2 0 0 0 .9 2.2 9.6 9.6 0 0 0 3.6 3.2 11.7 11.7 0 0 0 1.2.4 2.9 2.9 0 0 0 1.3.1 2.1 2.1 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.1-.4-.2z"/>
+</svg>
+</a>
+
+</div>
+<script>
+
+const cards = document.querySelectorAll(".why-imat-card");
+
+function revealCards(){
+
+cards.forEach((card,index)=>{
+
+const rect = card.getBoundingClientRect();
+
+if(rect.top < window.innerHeight - 100){
+
+setTimeout(()=>{
+card.classList.add("active");
+},index*200);
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revealCards);
+
+</script>
+</body>
+</html>
