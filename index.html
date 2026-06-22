@@ -774,12 +774,71 @@ width:max-content;
 }
 
 .testimonial{
-min-width:300px;
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
+min-width:420px;
+max-width:420px;
+min-height:520px;
+
+padding:35px 30px;
+
+border-radius:28px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
 text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+
+transition:.35s ease;
+}
+
+.testimonial:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,0.22);
+}
+
+.testimonial img{
+width:140px;
+height:140px;
+object-fit:cover;
+
+border-radius:50%;
+
+margin-bottom:18px;
+
+border:4px solid #ffd700;
+
+box-shadow:0 0 20px rgba(255,215,0,0.45);
+}
+
+.testimonial p{
+font-size:16px;
+line-height:1.8;
+color:#333;
+}
+.testimonial .student-name{
+display:block;
+
+font-size:1.35rem;
+font-weight:800;
+
+color:#f4b400;
+
+margin-bottom:10px;
+
+text-shadow:0 0 10px rgba(255,215,0,0.35);
+}
+
+.testimonial .student-score{
+display:block;
+
+font-size:.95rem;
+font-weight:600;
+
+color:#666;
+
+margin-bottom:18px;
 }
 /* TESTIMONIAL CARD COLORS */
 
@@ -799,12 +858,7 @@ background:linear-gradient(
 );
 }
 
-.testimonial img{
-width:80px;
-height:80px;
-border-radius:50%;
-margin-bottom:10px;
-}
+
 
 /* ================= SOCIAL ================= */
 .social{
@@ -1493,7 +1547,7 @@ L2000 100"/>
 <!-- APP -->
 <div class="stable-section">
 
-<h2 class="section-title">ACE IMAT - Available on Android & iOS</h2>
+<h2 class="section-title">ACE IMAT - Available on Android & iOS <br> (Coming Soon) <br></h2>
 
 <div class="app-store-section">
 <div class="store-box">
@@ -1534,14 +1588,16 @@ L2000 100"/>
 
 </div>
 
-<button class="glow-btn loyalty-btn">Join Student Loyalty Program</button>
+<button class="glow-btn loyalty-btn" onclick="window.location.href='https://learn.aceimat.com/t/u/affiliatelinks'">
+    Join Student Loyalty Program
+</button>
 
 </div>
 
 <!-- LECTURER -->
 <div class="lecturer">
 <h2 class="section-title">Meet our Coach – Nandish</h2>
-<img src="assets/images/lecturer/nandhish-profile.jpg">
+<img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782130951/IMG_20260622_165100_793.jpg_p6fd19.jpg">
 <p> Cleared IMAT | Studying Medicine in Europe | Mentored 100+ Students</p>
 </div>
 
@@ -1550,32 +1606,83 @@ L2000 100"/>
 <div class="drag-container testimonial-wrapper">
 <div class="testimonial-track">
 
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-1.jpg"><p>"ACE IMAT transformed my preparation."</p></div>
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-2.jpg"><p>"Best mentorship and analytics."</p></div>
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-3.jpg"><p>"Highly recommended for IMAT."</p></div>
-
-<!-- DUPLICATE -->
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-1.jpg"><p>"ACE IMAT transformed my preparation."</p></div>
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-2.jpg"><p>"Best mentorship and analytics."</p></div>
-<div class="testimonial"><img src="assets/images/testimonials/student-feedback-3.jpg"><p>"Highly recommended for IMAT."</p></div>
-
+<div class="testimonial"><img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782131110/IMG_20260622_165525_782.jpg_nguqw4.jpg"><p>
+<span class="student-name">Elstina Pereira Gleeson</span>
+<span class="student-score">IMAT 2024 • 62.9 | Student at UNIPVM</span>
+</p> <br>Okay, honestly? I was so stressed about IMAT and had no idea where to start. Nandish was a friend and tutored me. His classes actually make sense like, they break everything down in a way that does make you understand everything. I felt so much more confident going into the exam.<br> 10/10 would recommend to anyone serious about studying medicine in Italy.<br></div>
+<div class="testimonial"><img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782131898/IMG_20260622_165637_989.jpg_iyofcv.jpg"><p>
+<span class="student-name">Ben Hammed Mohamed Firas</span>
+<span class="student-score">IMAT 2024 • 58 | Student at UNICT, Catania</span>
+</p> <br> Preparing for the IMAT initially felt very overwhelming, especially when it came to structuring my preparation. Nandish was someone I could discuss strategy, concepts, and the overall process with, and those conversations genuinely helped me feel more focused and confident. Over time, the preparation started feeling much more manageable, and by exam day I felt well prepared.I’d recommend him to anyone navigating the IMAT journey and looking for guidance and motivation along the way. </div>
+<div class="testimonial"><img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782132880/WhatsApp_Image_2026-06-22_at_4.54.56_PM_extssl.jpg"><p>
+<span class="student-name">Devi Krishna VP</span>
+<span class="student-score">IMAT 2025 • 75.60 | University of Milan</span>
+</p> <br> Nandish and I prepared together, and he was always willing to help clear my doubts in Chemistry and Biology. He has a strong conceptual understanding of the subjects and is particularly good at framing thought-provoking questions that are highly relevant for the IMAT. He is a supportive friend and a great mentor for anyone looking to strengthen their concepts</div>
+<!-- DUPLICATE --> 
+<div class="testimonial"> <img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782131110/IMG_20260622_165525_782.jpg_nguqw4.jpg"><p>
+<span class="student-name">Elstina Pereira Gleeson</span>
+<span class="student-score">IMAT 2024 • 62.9 | Student at UNIPVM</span>
+</p> <br>Okay, honestly? I was so stressed about IMAT and had no idea where to start. Nandish was a friend and tutored me. His classes actually make sense like, they break everything down in a way that does make you understand everything. I felt so much more confident going into the exam.<br> 10/10 would recommend to anyone serious about studying medicine in Italy.<br></div>
+<div class="testimonial"><img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782131898/IMG_20260622_165637_989.jpg_iyofcv.jpg"><p>
+<span class="student-name">Ben Hammed Mohamed Firas</span>
+<span class="student-score">IMAT 2024 • 58 | Student at UNICT, Catania</span>
+</p> <br> Preparing for the IMAT initially felt very overwhelming, especially when it came to structuring my preparation. Nandish was someone I could discuss strategy, concepts, and the overall process with, and those conversations genuinely helped me feel more focused and confident. Over time, the preparation started feeling much more manageable, and by exam day I felt well prepared.I’d recommend him to anyone navigating the IMAT journey and looking for guidance and motivation along the way. </div>
+<div class="testimonial"><img src="https://res.cloudinary.com/dcxgql0lu/image/upload/v1782132880/WhatsApp_Image_2026-06-22_at_4.54.56_PM_extssl.jpg"><p>
+<span class="student-name">Devi Krishna VP</span>
+<span class="student-score">IMAT 2025 • 75.60 | University of Milan</span>
+</p><br>
+Nandish and I prepared together, and he was always willing to help clear my doubts in Chemistry and Biology. He has a strong conceptual understanding of the subjects and is particularly good at framing thought-provoking questions that are highly relevant for the IMAT. He is a supportive friend and a great mentor for anyone looking to strengthen their concepts
 </div>
-</div>
+
+</div> <!-- testimonial-track -->
+</div> <!-- testimonial-wrapper -->
+
 <!-- ================== AFFILIATE / INFLUENCER PROGRAM ================== -->
 <section class="affiliate-program" style="background:linear-gradient(135deg,#fff5f7,#ffeef2); padding:50px 8%; text-align:center; border-radius:20px; margin:40px 8%;">
   <h2 style="font-size:2rem; font-weight:900; color:#f4b400; margin-bottom:20px;">Partner With Us</h2>
   <p style="font-size:1rem; color:#222; max-width:650px; margin:0 auto 25px;">
     Influencers can join our affiliate program and help more students realize their Medicine dreams!</p>
-  <a href="/affiliate-signup" class="gold-btn" style="text-decoration:none;">Join Now</a>
+
+<section id="partnerForm" style="max-width:700px;margin:50px auto;padding:40px;background:white;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);">
+
+<form action="https://formsubmit.co/contact@aceimat.com" method="POST">
+
+<input type="hidden" name="_subject" value="New Partner Application - ACE IMAT">
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" name="Name" placeholder="Full Name" required
+style="width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
+
+<input type="email" name="Email" placeholder="Email Address" required
+style="width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
+
+<input type="tel" name="Phone" placeholder="Phone Number" required
+style="width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
+
+<input type="url" name="Social Link 1" placeholder="Instagram / YouTube / LinkedIn (Required)" required
+style="width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
+
+<textarea name="About" rows="6"
+placeholder="Tell us about yourself"
+required
+style="width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ddd;"></textarea>
+
+<button type="submit" class="gold-btn">
+Submit Application
+</button>
+
+</form>
+
+</section>
 </section>
 <!-- ================== FOOTER ================== -->
 <footer style="background:#fffdf5; color:#222; text-align:center; padding:30px 15px; font-family:'Poppins',sans-serif; font-size:0.9rem; border-top:2px solid #ffd700;">
 
   <!-- Footer Links -->
   <div style="margin-bottom:15px;">
-    <a href="/terms" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Terms & Conditions</a> |
-    <a href="/privacy" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Privacy Policy</a> |
-    <a href="/contact" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Contact Us</a>
+    <a href="https://learn.aceimat.com/n/pages/terms" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Terms & Conditions</a> |
+    <a href="https://learn.aceimat.com/n/pages/PrivacyPolicy" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Privacy Policy</a> |
+    <a href="mailto:contact@aceimat.com" style="color:#f4b400; margin:0 12px; text-decoration:none; transition:color 0.3s;">Contact Us</a>
   </div>
 
   <!-- Copyright -->
